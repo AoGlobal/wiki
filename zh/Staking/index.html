@@ -1,0 +1,1516 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AoChain是基于Substrate 开发的开放式智能生态服务公链。">
+      
+      
+      
+        <link rel="canonical" href="http://wiki.aochain.io/zh/Staking/">
+      
+      
+        <meta name="author" content="AoChain">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.6">
+    
+    
+      
+        <title>Staking - AoChain Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6910b76c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.196e0c26.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Convergence:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Convergence",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="pink">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#staking" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="http://wiki.aochain.io/" title="AoChain Wiki" class="md-header-nav__button md-logo" aria-label="AoChain Wiki">
+      
+  <img src="../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            AoChain Wiki
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Staking
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/aoglobal/wiki/" title="前往 GitHub 仓库" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Aochain Substrate Lab
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="http://wiki.aochain.io/" title="AoChain Wiki" class="md-nav__button md-logo" aria-label="AoChain Wiki">
+      
+  <img src="../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    AoChain Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/aoglobal/wiki/" title="前往 GitHub 仓库" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Aochain Substrate Lab
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      概述
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="概述" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        概述
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Introduction/" class="md-nav__link">
+      介绍
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    <label class="md-nav__link" for="nav-2">
+      深入了解
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="深入了解" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        深入了解
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" >
+    <label class="md-nav__link" for="nav-2-1">
+      架构
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="架构" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon"></span>
+        架构
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" class="md-nav__link">
+      系统架构
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E7%8B%AC%E7%AB%8B%E6%A8%A1%E5%BC%8F/" class="md-nav__link">
+      独立模式
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Polkadot%E7%BD%91%E7%BB%9C%E6%9C%AF%E8%AF%AD%E6%95%B4%E7%90%86/" class="md-nav__link">
+      Polkadot网络术语整理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Staking
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Staking
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aochain" class="md-nav__link">
+    Aochain 抵押的运作方式
+  </a>
+  
+    <nav class="md-nav" aria-label="Aochain 抵押的运作方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1.  确定身份
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 提名期
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 抵押奖励分配
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 奖励机制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    账户
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    验证人和提名人
+  </a>
+  
+    <nav class="md-nav" aria-label="验证人和提名人">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#want-to-stake-aot" class="md-nav__link">
+    Want to stake AOT?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slashing" class="md-nav__link">
+    惩罚 (Slashing)
+  </a>
+  
+    <nav class="md-nav" aria-label="惩罚 (Slashing)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unresponsiveness" class="md-nav__link">
+    Unresponsiveness
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grandpa-equivocation" class="md-nav__link">
+    GRANDPA Equivocation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#babe-equivocation" class="md-nav__link">
+    BABE Equivocation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chilling" class="md-nav__link">
+    Chilling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slashing-across-eras" class="md-nav__link">
+    Slashing Across Eras
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    奖励分配
+  </a>
+  
+    <nav class="md-nav" aria-label="奖励分配">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    领取奖励
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    奖励分配例子
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    通胀率
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    为什么参与抵押?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    为什么不参与抵押?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-many-validators-does-dagama-have" class="md-nav__link">
+    How many validators does DaGama have?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E5%BC%80%E5%8F%91%E8%80%85%E4%B8%93%E9%A1%B5/" class="md-nav__link">
+      开发者专页
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5" >
+    <label class="md-nav__link" for="nav-2-5">
+      Accounts
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Accounts" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        <span class="md-nav__icon md-icon"></span>
+        Accounts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E8%B4%A6%E6%88%B7%E5%AF%86%E9%92%A5/" class="md-nav__link">
+      账户秘钥
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E5%88%9B%E5%BB%BA%E8%B4%A6%E6%88%B7/" class="md-nav__link">
+      创建账户
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E8%B4%A6%E6%88%B7%E5%9C%B0%E5%9D%80/" class="md-nav__link">
+      账户地址
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E6%A3%80%E6%9F%A5%E8%B4%A6%E6%88%B7%E4%BD%99%E9%A2%9D/" class="md-nav__link">
+      检查账户余额
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E8%B4%A6%E6%88%B7%E4%BD%99%E9%A2%9D%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+      账户余额说明
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6" >
+    <label class="md-nav__link" for="nav-2-6">
+      经济系统
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="经济系统" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        <span class="md-nav__icon md-icon"></span>
+        经济系统
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%94%9F%E4%BB%A3%E5%B8%81/" class="md-nav__link">
+      网络原生代币
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E5%A5%96%E5%8A%B1%E5%88%86%E9%85%8D/" class="md-nav__link">
+      奖励分配
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E4%BA%A4%E6%98%93%E6%89%8B%E7%BB%AD%E8%B4%B9/" class="md-nav__link">
+      交易手续费
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E5%AF%86%E7%A0%81%E5%AD%A6/" class="md-nav__link">
+      密码学
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E5%AF%86%E5%8C%99/" class="md-nav__link">
+      密匙
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E6%B2%BB%E7%90%86/" class="md-nav__link">
+      治理
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+    <label class="md-nav__link" for="nav-3">
+      教程列表
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="教程列表" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        教程列表
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E6%95%99%E7%A8%8B%E5%88%97%E8%A1%A8-%E5%88%9B%E5%BB%BA%E8%B4%A6%E6%88%B7/" class="md-nav__link">
+      如何创建账户
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E6%95%99%E7%A8%8B%E5%88%97%E8%A1%A8-%E6%88%90%E4%B8%BA%E6%8F%90%E5%90%8D%E4%BA%BA/" class="md-nav__link">
+      如何成为提名人
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aochain" class="md-nav__link">
+    Aochain 抵押的运作方式
+  </a>
+  
+    <nav class="md-nav" aria-label="Aochain 抵押的运作方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1.  确定身份
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 提名期
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 抵押奖励分配
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 奖励机制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    账户
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    验证人和提名人
+  </a>
+  
+    <nav class="md-nav" aria-label="验证人和提名人">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#want-to-stake-aot" class="md-nav__link">
+    Want to stake AOT?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slashing" class="md-nav__link">
+    惩罚 (Slashing)
+  </a>
+  
+    <nav class="md-nav" aria-label="惩罚 (Slashing)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unresponsiveness" class="md-nav__link">
+    Unresponsiveness
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grandpa-equivocation" class="md-nav__link">
+    GRANDPA Equivocation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#babe-equivocation" class="md-nav__link">
+    BABE Equivocation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chilling" class="md-nav__link">
+    Chilling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slashing-across-eras" class="md-nav__link">
+    Slashing Across Eras
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    奖励分配
+  </a>
+  
+    <nav class="md-nav" aria-label="奖励分配">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    领取奖励
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    奖励分配例子
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    通胀率
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    为什么参与抵押?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    为什么不参与抵押?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-many-validators-does-dagama-have" class="md-nav__link">
+    How many validators does DaGama have?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/aoglobal/wiki/edit/master/docs/zh/Staking.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="staking">Staking</h1>
+<p>AOCHAIN 使用 NPoS(提名权益证明)机制选择验证人，该机制为了<strong><em>验证人</em></strong> 和 <strong><em>提名人</em></strong> 两种角色，以实现链安全性的最大化。对网络维护感兴趣的参与者可以负责运行验证人节点。在创世区块中，波卡链将为验证人提供有限位置，位置数量将逐步增加至 1000 以上。</p>
+<p>系统鼓励 AOT 持有者作为提名人参与。提名人可以支持最多16个他们相信的验证候选人。</p>
+<p>验证人角色是在 BABE 负责生成区块，验证平行链区块和确保最终性。提名人可以根据验证人抵押量而作选择。</p>
+<p>The staking system pays out rewards equally to all validators regardless of stake. In other words,
+having more stake on a validator does not influence the block rewards they receive. However, there
+is a probabilistic component to reward calculation (discussed below), so rewards may not be exactly
+equal for all validators in a given era.</p>
+<h2 id="aochain">Aochain 抵押的运作方式</h2>
+<h3 id="1">1.  确定身份</h3>
+<p>In staking, you can be either a <a href="#validators-and-nominators">nominator or a validator</a>.</p>
+<p>As a nominator, you can nominate one or more (up to 16) validator candidates that you trust to help
+you earn rewards in AOT. You can take a look at the <a href="learn-nominator">nominator guide</a> to understand
+what you are required to do when the mainnet launches.</p>
+<h3 id="2">2. 提名期</h3>
+<p>Any potential validators can indicate their intention to be a validator candidate. Their candidacies
+are made public to all nominators, and a nominator in turn submits a list of any number of
+candidates that it supports. In the next epoch (lasting several hours), a certain number of
+validators having the most AOT backing get elected and become active. There are no particular
+requirements for a AOT holder to become a nominator, though we expect each nominator to carefully
+track the performance and reputation of validators.</p>
+<p>Once the nomination period ends, the NPoS election mechanism takes the nominators and their
+associated votes as input, and outputs a set of validators of the required size, that maximizes the
+stake backing of any validator, and that makes the stakes backing validators as evenly distributed
+as possible. The objectives of this election mechanism are to maximize the security of the network,
+and achieve fair representation of the nominators. If you want to know more about how NPoS works
+(e.g. election, running time complexity, etc.), please read
+<a href="http://research.web3.foundation/en/latest/polkadot/NPoS.html">here</a>.</p>
+<h3 id="3">3. 抵押奖励分配</h3>
+<p>To explain how rewards are paid to validators and nominators, we need to consider <strong>validator
+pools</strong>, where a validator pool consists of an elected validator together with the nominators
+backing it. (Note: if a nominator <code>n</code> with stake <code>s</code> backs several elected validators, say <code>k</code>, the
+NPoS election mechanism will split its stakes into pieces <code>s_1</code>, <code>s_2</code>, …, <code>s_k</code>, so that it backs
+validator <code>i</code> with stake <code>s_i</code>. In that case, nominator <code>n</code> will be rewarded the same as if there
+were <code>k</code> nominators in different pools, each backing a single validator <code>i</code> with stake <code>s_i</code>). For
+each validator pool, we keep a list of nominators with the associated stakes.</p>
+<p>The general rule for rewards across validator pools is that two validator pools get paid the <strong>same
+amount of AOT</strong> for equal work, i.e. they are NOT paid proportional to the stakes in each pool.
+Within a validator pool, a (configurable) part of the reward goes to pay the validator's commission
+fees and the remainder is paid <strong>pro-rata</strong> (i.e. proportional to stake) to the nominators and
+validator. Notice in particular that the validator is rewarded twice: once as commission fees for
+validating, and once for nominating itself with stake.</p>
+<p>To estimate the inflation rate and how many AOT you can get each month as a nominator or validator,
+you can use this <a href="https://www.stakingrewards.com/earn/polkadot/calculate">tool</a> as a reference and
+play around with it ....by changing some parameters (e.g. how many days you would like to stake with
+your AOT, provider fees, compound rewards, etc.) to have a better estimate. Even though it may not
+be entirely accurate since staking participation is changing dynamically, it works well as an
+indicator.</p>
+<h3 id="4">4. 奖励机制</h3>
+<p>We highlight two features of this payment scheme. The first is that since validator pools are paid
+the same regardless of stake level, pools with less stake will generally pay more to nominators
+per-AOT than pools with more stake. We thus give nominators an economic incentive to gradually shift
+their preferences to lower staked validators that gain a sufficient amount of reputation. The reason
+for this is that we want the stake across validator pools to be as evenly distributed as possible,
+to avoid a concentration of power among a few validators. In the long term, we expect all validator
+pools to have similar levels of stake, with the stake being higher for higher reputation validators
+(meaning that a nominator that is willing to risk more by backing a validator with a low reputation
+will get paid more).</p>
+<p>The following example should clarify the above. For simplicity, we have the following assumptions:</p>
+<ul>
+<li>These validators do not have a stake of their own.</li>
+<li>They do NOT charge any commission fees.</li>
+<li>Reward amount is 100 AOT tokens.</li>
+<li>The current minimum amount of AOT to be a validator is 350.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"><strong>A - Validator Pool</strong></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Nominator (4)</td>
+<td align="center">Stake (600)</td>
+<td align="center">Fraction of the Total Stake</td>
+<td align="center">Rewards</td>
+</tr>
+<tr>
+<td align="center">Jin</td>
+<td align="center">100</td>
+<td align="center">0.167</td>
+<td align="center">16.7</td>
+</tr>
+<tr>
+<td align="center"><strong>Sam</strong></td>
+<td align="center">50</td>
+<td align="center">0.083</td>
+<td align="center">8.3</td>
+</tr>
+<tr>
+<td align="center">Anson</td>
+<td align="center">250</td>
+<td align="center">0.417</td>
+<td align="center">41.7</td>
+</tr>
+<tr>
+<td align="center">Bobby</td>
+<td align="center">200</td>
+<td align="center">0.333</td>
+<td align="center">33.3</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"><strong>B - Validator Pool</strong></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Nominator (4)</td>
+<td align="center">Stake (400)</td>
+<td align="center">Fraction of the Total Stake</td>
+<td align="center">Rewards</td>
+</tr>
+<tr>
+<td align="center">Alice</td>
+<td align="center">100</td>
+<td align="center">0.25</td>
+<td align="center">25</td>
+</tr>
+<tr>
+<td align="center">Peter</td>
+<td align="center">100</td>
+<td align="center">0.25</td>
+<td align="center">25</td>
+</tr>
+<tr>
+<td align="center">John</td>
+<td align="center">150</td>
+<td align="center">0.375</td>
+<td align="center">37.5</td>
+</tr>
+<tr>
+<td align="center"><strong>Kitty</strong></td>
+<td align="center">50</td>
+<td align="center">0.125</td>
+<td align="center">12.5</td>
+</tr>
+</tbody>
+</table>
+<p><em>Both validator pools A &amp; B have 4 nominators with the total stake 600 and 400 respectively.</em></p>
+<p>Based on the above rewards distribution, nominators in validator pool B get more rewards per AOT
+than those in pool A because pool A has more overall stake. Sam has staked 50 AOT in pool A, but he
+only gets 8.3 in return, whereas Kitty gets 12.5 with the same amount of stake.</p>
+<p>We also remark that when the network slashes a validator slot for a misbehavior (e.g. validator
+offline, equivocation, etc.) the slashed amount is a fixed percentage (and NOT a fixed amount of
+AOT), which means that validator pools with more stake get slashed more AOT. Again, this is done to
+provide nominators with an economic incentive to shift their preferences and back less popular
+validators whom they consider to be trustworthy.</p>
+<p>The second point to note is that each validator candidate is free to name their desired commission
+fee (as a percentage of rewards) to cover operational costs. Since validator pools are paid the
+same, pools with lower commission fees pay more to nominators than pools with higher fees. Thus,
+each validator can choose between increasing their fees to earn more AOT, or decreasing their fees
+to attract more nominators and increase their chances of being elected. We will let the market
+regulate itself in this regard. In the long term, we expect that all validators will need to be cost
+efficient to remain competitive, and that validators with higher reputation will be able to charge
+slightly higher commission fees (which is fair).</p>
+<h2 id="_1">账户</h2>
+<p>There are two different accounts for managing your funds: <code>Stash</code> and <code>Controller</code>.</p>
+<p><img alt="staking" src="http://aochain-cdn.oss-cn-beijing.aliyuncs.com/staking-keys_stash_controller.png" /></p>
+<ul>
+<li>
+<p><strong>Stash:</strong> 这帐户储存资金用作绑定 AOTs 参与抵押，但将某些功能委托给 Controller。因此使用 Controller 可以积极参与，其保存 Stash 密钥在冷钱包中，这意味着它永远保持离线状态。您还可以指定代理帐户，对治理议案进行投票。</p>
+</li>
+<li>
+<p><strong>Controller</strong> 这帐户是代表 Stash 帐户负责发出有关提名和验证的操作。它用于设置奖励发送到那个帐户和佣金。如果你是验证人，它亦用作设定 session 密钥，并只需要足够的资金来支付交易费用。</p>
+</li>
+</ul>
+<p>We designed this hierarchy of separate key types so that validator operators and nominators can
+protect themselves much better than in systems with only one key. As a rule, you lose security
+anytime you use one key for multiple roles, or even if you use keys related by derivation. You
+should never use any account key for a "hot" session key in particular.</p>
+<p>Controller and Stash account keys can be either sr25519 or ed25519. For more on how keys are used in
+Polkadot and the cryptography behind it <a href="learn-keys">see here</a>.</p>
+<h2 id="_2">验证人和提名人</h2>
+<p>Since validator slots will be limited, most of those who wish to stake their AOT and contribute
+economic security to the network will be nominators. Validators do most of the heavy lifting: they
+produce new block candidates in BABE, vote and come to consensus in GRANDPA, validate the state
+transition function of parachains, and possibly some other responsibilities regarding data
+availability and <a href="learn-crosschain">XCMP</a>. Nominators, on the other hand, do not need to do anything
+once they have bonded their AOT. The experience of the nominator is similar to "set it and forget
+it," while the validator will be doing active service for the network by performing the critical
+operations. For this reason, the validator has certain privileges regarding the payout of the
+staking mechanism and will be able to declare its own allocation before the share is divided to
+nominators.</p>
+<p><img alt="staking" src="http://aochain-cdn.oss-cn-beijing.aliyuncs.com/article-2.png" /></p>
+<blockquote>
+<p>Note: while the experience of a nominator is <em>similar</em> to "set it and forget it", in reality there
+are many reasons to keep an eye on one's validators and keep optimizing the nominations for best
+returns and reduced risk. We talk more about this on the
+<a href="maintain-guides-how-to-nominate-polkadot">How to Nominate</a> page.</p>
+</blockquote>
+<h3 id="want-to-stake-aot">Want to stake AOT?</h3>
+<ul>
+<li><a href="maintain-guides-how-to-nominate-polkadot">Nominator Guide</a> - Become a nominator on the DaGama
+  network.</li>
+<li><a href="maintain-guides-how-to-validate-polkadot">Validator Guide</a> - Become a validator on the DaGama
+  network.</li>
+</ul>
+<h2 id="slashing">惩罚 (Slashing)</h2>
+<p>Slashing will happen if a validator misbehaves (e.g. goes offline, attacks the network, or runs
+modified software) in the network. They and their nominators will get slashed by losing a percentage
+of their bonded/staked AOT. Any slashed AOT will be added to the Treasury. The rationale for this
+(rather than burning or distributing them as rewards) is that slashes may then be reverted by the
+Council by simply paying out from the Treasury. This would be useful in situations such as a faulty
+runtime causing slashing or forcing validators offline through no fault of their own. In the case of
+legitimate slashing, it moves tokens away from malicious validators to those building the ecosystem
+through the normal Treasury process.</p>
+<p>Validator pools with larger total stake backing them will get slashed more harshly than less popular
+ones, so we encourage nominators to shift their nominations to less popular validators to reduce the
+possible losses.</p>
+<p>Once a validator gets slashed, it goes into the state as an "unapplied slash". You can check this
+via
+<a href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/staking/slashes">Polkadot-JS Apps</a>.
+The UI shows it per validator and then all the affected nominators along with the amounts. While
+unapplied, a governance proposal can be made to reverse it during this period (7 days on Colombo, 28
+days on DaGama). After the grace period, the slashes are applied.</p>
+<p>The following levels of offence are
+<a href="https://research.web3.foundation/en/latest/polkadot/slashing/amounts.html">defined</a> (for specific
+slash amounts, see the equations in the section below):</p>
+<ul>
+<li>Level 1: isolated unresponsiveness, i.e. being offline for an entire <a href="glossary#epoch">epoch</a>. No slashing, only
+  <a href="#chilling"><em>chilling</em></a>.</li>
+<li>Level 2: concurrent unresponsiveness or isolated equivocation. Slashes a very small amount of the
+  stake and chills.</li>
+<li>Level 3: misconducts unlikely to be accidental, but which do not harm the network's security to
+  any large extent. Examples include concurrent equivocation or isolated cases of unjustified voting
+  in <a href="learn-consensus">GRANDPA</a>. Slashes a moderately small amount of the stake and chills.</li>
+<li>Level 4: misconduct that poses a serious security or monetary risk to the system, or mass
+  collusion. Slashes all or most of the stake behind the validator and chills.</li>
+</ul>
+<p>Let's look at these offences in a bit more detail.</p>
+<h3 id="unresponsiveness">Unresponsiveness</h3>
+<p>For every session, validators will send an "I'm Online" heartbeat to indicate they are online. If a
+validator produces no blocks during an epoch and fails to send the heartbeat, it will be reported as
+unresponsive. Depending on the repeated offences and how many other validators were unresponsive or
+offline during the epoch, slashing may occur.</p>
+<p>Here is the formula for calculation:</p>
+<pre><code>Let x = offenders, n = total no. validators
+
+min((3 * (x - (n / 10 + 1))) / n, 1) * 0.07
+</code></pre>
+<p>Note that if less than 10% of all validators are offline, no penalty is enacted.</p>
+<p>Validators should have a well-architected network infrastructure to ensure the node is running to
+reduce the risk of being slashed. A high availability setup is desirable, preferably with backup
+nodes that kick in <strong>only once the original node is verifiably offline</strong> (to avoid double-signing
+and being slashed for equivocation - see below), together with
+<a href="maintain-guides-how-to-setup-sentry-node">proxy nodes</a> to avoid being DDoSed when your validator
+node's IP address is exposed. A comprehensive guide on secure validator setup is available
+<a href="https://wiki.polkadot.network/docs/en/maintain-guides-secure-validator">here</a>.</p>
+<h3 id="grandpa-equivocation">GRANDPA Equivocation</h3>
+<p>A validator signs two or more votes in the same round on different chains.</p>
+<h3 id="babe-equivocation">BABE Equivocation</h3>
+<p>A validator produces two or more blocks on the Relay Chain in the same time slot.</p>
+<p>GRANDPA and BABE equivocation slashing penalty is calculated as below:</p>
+<pre><code>Let x = offenders, n = total no. validators
+
+Min( (3 * x / n )^2, 1)
+</code></pre>
+<p>Validators may run their nodes on multiple machines to make sure they can still perform validation
+work in case one of their nodes goes down. It should be noted that if they do not have good
+coordination to manage signing machines, then equivocation is possible.</p>
+<p>If a validator is reported for any one of the offences they will be removed from the validator set
+(<a href="#chilling">chilled</a>) and they will not be paid while they are out. They will be considered
+inactive immediately and will lose their nominators. They need to re-issue intent to validate and
+gather support from nominators.</p>
+<p>If you want to know more details about slashing, please look at our
+<a href="https://research.web3.foundation/en/latest/polkadot/slashing/amounts.html">research page</a>.</p>
+<h3 id="chilling">Chilling</h3>
+<p>Chilling is the act of removing a validator from the active validator set, also disqualifying them
+from the set of electable candidates in the next NPoS cycle.</p>
+<p>This may be voluntary and validator-initiated, e.g. if there is a planned outage in the validator's
+surroundings or hosting provider, and the validator wants to exit to protect themselves against
+slashing. When voluntary, chilling will keep the validator active in the current session, but will
+move them to the inactive set in the next. The validator will not lose their nominators.</p>
+<p>When used as part of a punishment, being chilled carries an implied penalty of being un-nominated.
+It also disables the validator for the remainder of the current era and removes the offending
+validator from the next election.</p>
+<p>DaGama allows some validators to be disabled, but if the number of disabled validators gets too
+large, DaGama will trigger a new validator election to get a full set. Disabled validators will
+need to resubmit their intention to validate and regarner support from nominators.</p>
+<p>For more on chilling, see the <a href="maintain-guides-how-to-chill">How to Chill</a> page on this wiki.</p>
+<h3 id="slashing-across-eras">Slashing Across Eras</h3>
+<p>There are 3 main difficulties to account for with slashing in NPoS:</p>
+<ul>
+<li>A nominator can nominate multiple validators and be slashed via any of them.</li>
+<li>Until slashed, stake is reused from era to era. Nominating with N coins for E eras in a row does
+  not mean you have N*E coins to be slashed - you've only ever had N.</li>
+<li>Slashable offences can be found after the fact and out of order.</li>
+</ul>
+<p>To balance this, we only slash for the maximum slash a participant can receive in some time period,
+rather than the sum. This ensures protection from overslashing. Likewise, the time span over which
+maximum slashes are computed are finite and the validator is chilled with nominations withdrawn
+after a slashing event, as stated in the previous section. This prevents rage-quit attacks in which,
+once caught misbehaving, a participant deliberately misbehaves more because their slashing amount is
+already maxed out.</p>
+<h2 id="_3">奖励分配</h2>
+<p>Note that Colombo runs approximately 4x as fast as DaGama, except for block production times.
+DaGama will also produce blocks at approximately six second intervals.</p>
+<p>Rewards are recorded per session (approximately one hour on Colombo and four hours on DaGama) and
+calculated per era (approximately six hours on Colombo and twenty-four hours on DaGama). Thus,
+rewards will be calculated four times per day on Colombo and once per day on DaGama.</p>
+<p>Rewards are calculated based on era points, which have a probabilistic component. In other words,
+there may be slight differences in your rewards from era to era, and even amongst validators in the
+active set at the same time. These variations should cancel out over a long enough timeline. See the
+page on <a href="maintain-guides-validator-payout">Validator Payout Guide</a> for more information on how these
+are calculated.</p>
+<p>In order to be paid your staking rewards, someone must claim them for each validator that you
+nominate. Staking rewards are kept available for 84 eras, which is approximately 84 days on DaGama
+and 21 days on Colombo. For more information on why this is so, see the page on
+<a href="learn-simple-payouts">simple payouts</a>.</p>
+<blockquote>
+<p>WARNING: If nobody claims your staking rewards by this time, then you will not be able to claim
+them and some of your staking rewards will be lost.</p>
+</blockquote>
+<h3 id="_4">领取奖励</h3>
+<p>If you go to the Staking payouts page on
+<a href="https://polkadot.js.org/apps/#/staking/payout">Polkadot-JS</a>, you will see a list of all validators
+that you have nominated in the past 84 eras and for which you have not yet received a payout. Each
+one has the option to trigger the payout for all unclaimed eras. Note that this will pay everyone
+who was nominating that validator during those eras, and anyone can call it. Therefore, you may not
+see anything in this tab, yet still received a payout if somebody (generally, but not necessarily,
+another nominator or the validator operator) has triggered the payout for that validator for that
+era.</p>
+<p>If you wish to check if you received a payout, you will have to check via a block explorer. See
+<a href="https://support.polkadot.network/support/solutions/articles/65000168954-how-can-i-see-my-staking-rewards-">the relevant Support page</a>
+for details.</p>
+<h3 id="_5">奖励分配例子</h3>
+<pre><code>    PER_ERA * BLOCK_TIME = **Reward Distribution Time**
+
+    3600 * 6 seconds = 21,600 s = 6 hours
+
+    ***These parameters can be changed by proposing a referendum***
+</code></pre>
+<p>Validators can create a cut of the reward that is not shared with the nominators. This cut is a
+percentage of the block reward, not an absolute value. After the value gets deducted, the remaining
+portion is based on their staked value and split between the validator and all of the nominators who
+have voted for this validator.</p>
+<p>For example, assume the block reward for a validator is 10 AOT. A validator may specify
+<code>validator_payment = 50%</code>, in which case the validator would receive 5 AOT. The remaining 5 AOT
+would then be split between the validator and their nominators based on the proportion of stake each
+nominator had. Note that validators can put up their own stake, and for this calculation, their
+stake acts just as if they were another nominator.</p>
+<p>Rewards can be directed to the same account (controller), to the stash account (and either
+increasing the staked value or not increasing the staked value), or to a completely custom account.
+It is also possible to top-up / withdraw some bonded AOT without having to un-stake everything.</p>
+<p>For specific details about validator payouts, please see
+<a href="maintain-guides-validator-payout">this guide</a>.</p>
+<h2 id="_6">通胀率</h2>
+<p>AOT is inflationary; there is no maximum number of AOT as in Bitcoin. Inflation is designed to be
+10% in the first year, with validator rewards being a function of amount staked and the remainder
+going to treasury.</p>
+<p><img alt="staking" src="http://aochain-cdn.oss-cn-beijing.aliyuncs.com/staking-participation-rate.png" /></p>
+<p style="text-align:center">Source: <a href="https://research.web3.foundation/en/latest/polkadot/Token%20Economics.html">Research - Web3 Foundation</a></p>
+
+<ul>
+<li><strong>x-axis</strong>: Proportion of AOT staked</li>
+<li><strong>y-axis</strong>: 通货膨胀, 年度化百分比</li>
+<li><strong>蓝线</strong>: 参与抵押者的通涨奖励</li>
+<li><strong>绿线</strong>: 抵押参与者的收益率</li>
+</ul>
+<p>For those who are interested in knowing more about the design of inflation model for the network,
+please see <a href="https://research.web3.foundation/en/latest/polkadot/Token%20Economics.html">here</a>.</p>
+<h2 id="_7">为什么参与抵押?</h2>
+<ul>
+<li>当主网上线，每年 10% 通胀率</li>
+<li>目标抵押为 50％</li>
+<li>~20% 年回报</li>
+</ul>
+<h2 id="_8">为什么不参与抵押?</h2>
+<ul>
+<li>代币解锁在 Colombo 需要7天，而 DaGama 则是28天。</li>
+<li>如果发现验证人行为不当，将执行处罚（请参见 #slashing ）。</li>
+<li>您将想代币用于平行链插槽。</li>
+</ul>
+<h2 id="how-many-validators-does-dagama-have">How many validators does DaGama have?</h2>
+<p>DaGama started with 20 open validator positions and has opened more gradually. The top bound on
+the number of validators has not been determined yet, but should only be limited by the bandwidth
+strain of the network due to peer-to-peer message passing. The estimate of the number of validators
+that DaGama will have at maturity is around 1000. Colombo, DaGama's canary network, currently has
+over 500 validator slots, and the plan is also to slowly grow this number to approximately 1000.</p>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://medium.com/web3foundation/how-nominated-proof-of-stake-will-work-in-polkadot-377d70c6bd43">How Nominated Proof of Stake will work in Polkadot</a> -
+  Blog post by Web3 Foundation researcher Alfonso Cevallos covering NPoS in Polkadot.</li>
+<li><a href="https://wiki.polkadot.network/docs/en/maintain-guides-secure-validator">Secure validator setup</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../Polkadot%E7%BD%91%E7%BB%9C%E6%9C%AF%E8%AF%AD%E6%95%B4%E7%90%86/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                Polkadot网络术语整理
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../%E5%BC%80%E5%8F%91%E8%80%85%E4%B8%93%E9%A1%B5/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                开发者专页
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            ©2020 AoChain Inc. All Rights Reserved.
+          </div>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://github.com/Aoglobal" target="_blank" rel="noopener" title="AoChain on Github" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://t.me/aolinkservices" target="_blank" rel="noopener" title="AoChain on Telegram" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://twitter.com/AoLink7" target="_blank" rel="noopener" title="AoChain on Twitter" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://www.youtube.com/channel/UCEwRRfa79AuyJkGR3pGcbqA" target="_blank" rel="noopener" title="AoChain on Youtube" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://aolinkservices.medium.com/" target="_blank" rel="noopener" title="AoChain on Medium" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 32v448h448V32H0zm372.2 106.1l-24 23c-2.1 1.6-3.1 4.2-2.7 6.7v169.3c-.4 2.6.6 5.2 2.7 6.7l23.5 23v5.1h-118V367l24.3-23.6c2.4-2.4 2.4-3.1 2.4-6.7V199.8l-67.6 171.6h-9.1L125 199.8v115c-.7 4.8 1 9.7 4.4 13.2l31.6 38.3v5.1H71.2v-5.1l31.6-38.3c3.4-3.5 4.9-8.4 4.1-13.2v-133c.4-3.7-1-7.3-3.8-9.8L75 138.1V133h87.3l67.4 148L289 133.1h83.2v5z"/></svg>
+      </a>
+    
+      
+      
+      <a href="hhttps://www.instagram.com/aolinkservices" target="_blank" rel="noopener" title="AoChain on Instagram" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.fd16492e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.instant'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
