@@ -1029,7 +1029,7 @@ pre .md-clipboard:hover {
     position: relative;
     z-index: 1;
     display: block;
-    margin: .7rem;
+    margin: .5rem;
     padding: .4rem;
     cursor: pointer;
     transition: opacity 250ms
@@ -1045,15 +1045,15 @@ pre .md-clipboard:hover {
 }
 
 .md-header-nav__button.md-logo {
-    margin: .2rem;
-    padding: .5rem
+    margin: 0rem;
+    padding: .4rem
 }
 
 .md-header-nav__button.md-logo img,
 .md-header-nav__button.md-logo svg {
     display: block;
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 1.8rem;
+    height: 1.8rem;
     fill: currentColor
 }
 
