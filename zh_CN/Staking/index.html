@@ -414,8 +414,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#want-to-stake-aot" class="md-nav__link">
-    Want to stake AOT?
+  <a href="#want-to-stake-com" class="md-nav__link">
+    Want to stake COM?
   </a>
   
 </li>
@@ -894,8 +894,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#want-to-stake-aot" class="md-nav__link">
-    Want to stake AOT?
+  <a href="#want-to-stake-com" class="md-nav__link">
+    Want to stake COM?
   </a>
   
 </li>
@@ -1034,7 +1034,7 @@
                 
                 <h1 id="staking">Staking<a class="headerlink" href="#staking" title="Permanent link">&para;</a></h1>
 <p>AOCHAIN 使用 NPoS(提名权益证明)机制选择验证人，该机制为了***验证人*** 和 <strong><em>提名人</em></strong> 两种角色，以实现链安全性的最大化。对网络维护感兴趣的参与者可以负责运行验证人节点。在创世区块中，波卡链将为验证人提供有限位置，位置数量将逐步增加至 1000 以上。</p>
-<p>系统鼓励 AOT 持有者作为提名人参与。提名人可以支持最多16个他们相信的验证候选人。</p>
+<p>系统鼓励 COM 持有者作为提名人参与。提名人可以支持最多16个他们相信的验证候选人。</p>
 <p>验证人角色是在 BABE 负责生成区块，验证平行链区块和确保最终性。提名人可以根据验证人抵押量而作选择。</p>
 <p>The staking system pays out rewards equally to all validators regardless of stake. In other words,
 having more stake on a validator does not influence the block rewards they receive. However, there
@@ -1044,14 +1044,14 @@ equal for all validators in a given era.</p>
 <h3 id="1">1.  确定身份<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>In staking, you can be either a <a href="#validators-and-nominators">nominator or a validator</a>.</p>
 <p>As a nominator, you can nominate one or more (up to 16) validator candidates that you trust to help
-you earn rewards in AOT. You can take a look at the <a href="learn-nominator">nominator guide</a> to understand
+you earn rewards in COM. You can take a look at the <a href="learn-nominator">nominator guide</a> to understand
 what you are required to do when the mainnet launches.</p>
 <h3 id="2">2. 提名期<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <p>Any potential validators can indicate their intention to be a validator candidate. Their candidacies
 are made public to all nominators, and a nominator in turn submits a list of any number of
 candidates that it supports. In the next epoch (lasting several hours), a certain number of
-validators having the most AOT backing get elected and become active. There are no particular
-requirements for a AOT holder to become a nominator, though we expect each nominator to carefully
+validators having the most COM backing get elected and become active. There are no particular
+requirements for a COM holder to become a nominator, though we expect each nominator to carefully
 track the performance and reputation of validators.</p>
 <p>Once the nomination period ends, the NPoS election mechanism takes the nominators and their
 associated votes as input, and outputs a set of validators of the required size, that maximizes the
@@ -1069,21 +1069,21 @@ validator <code>i</code> with stake <code>s_i</code>. In that case, nominator <c
 were <code>k</code> nominators in different pools, each backing a single validator <code>i</code> with stake <code>s_i</code>). For
 each validator pool, we keep a list of nominators with the associated stakes.</p>
 <p>The general rule for rewards across validator pools is that two validator pools get paid the <strong>same
-amount of AOT</strong> for equal work, i.e. they are NOT paid proportional to the stakes in each pool.
+amount of COM</strong> for equal work, i.e. they are NOT paid proportional to the stakes in each pool.
 Within a validator pool, a (configurable) part of the reward goes to pay the validator's commission
 fees and the remainder is paid <strong>pro-rata</strong> (i.e. proportional to stake) to the nominators and
 validator. Notice in particular that the validator is rewarded twice: once as commission fees for
 validating, and once for nominating itself with stake.</p>
-<p>To estimate the inflation rate and how many AOT you can get each month as a nominator or validator,
+<p>To estimate the inflation rate and how many COM you can get each month as a nominator or validator,
 you can use this <a href="https://www.stakingrewards.com/earn/polkadot/calculate">tool</a> as a reference and
 play around with it ....by changing some parameters (e.g. how many days you would like to stake with
-your AOT, provider fees, compound rewards, etc.) to have a better estimate. Even though it may not
+your COM, provider fees, compound rewards, etc.) to have a better estimate. Even though it may not
 be entirely accurate since staking participation is changing dynamically, it works well as an
 indicator.</p>
 <h3 id="4">4. 奖励机制<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
 <p>We highlight two features of this payment scheme. The first is that since validator pools are paid
 the same regardless of stake level, pools with less stake will generally pay more to nominators
-per-AOT than pools with more stake. We thus give nominators an economic incentive to gradually shift
+per-COM than pools with more stake. We thus give nominators an economic incentive to gradually shift
 their preferences to lower staked validators that gain a sufficient amount of reputation. The reason
 for this is that we want the stake across validator pools to be as evenly distributed as possible,
 to avoid a concentration of power among a few validators. In the long term, we expect all validator
@@ -1094,8 +1094,8 @@ will get paid more).</p>
 <ul>
 <li>These validators do not have a stake of their own.</li>
 <li>They do NOT charge any commission fees.</li>
-<li>Reward amount is 100 AOT tokens.</li>
-<li>The current minimum amount of AOT to be a validator is 350.</li>
+<li>Reward amount is 100 COM tokens.</li>
+<li>The current minimum amount of COM to be a validator is 350.</li>
 </ul>
 <table>
 <thead>
@@ -1182,18 +1182,18 @@ will get paid more).</p>
 </tbody>
 </table>
 <p><em>Both validator pools A &amp; B have 4 nominators with the total stake 600 and 400 respectively.</em></p>
-<p>Based on the above rewards distribution, nominators in validator pool B get more rewards per AOT
-than those in pool A because pool A has more overall stake. Sam has staked 50 AOT in pool A, but he
+<p>Based on the above rewards distribution, nominators in validator pool B get more rewards per COM
+than those in pool A because pool A has more overall stake. Sam has staked 50 COM in pool A, but he
 only gets 8.3 in return, whereas Kitty gets 12.5 with the same amount of stake.</p>
 <p>We also remark that when the network slashes a validator slot for a misbehavior (e.g. validator
 offline, equivocation, etc.) the slashed amount is a fixed percentage (and NOT a fixed amount of
-AOT), which means that validator pools with more stake get slashed more AOT. Again, this is done to
+COM), which means that validator pools with more stake get slashed more COM. Again, this is done to
 provide nominators with an economic incentive to shift their preferences and back less popular
 validators whom they consider to be trustworthy.</p>
 <p>The second point to note is that each validator candidate is free to name their desired commission
 fee (as a percentage of rewards) to cover operational costs. Since validator pools are paid the
 same, pools with lower commission fees pay more to nominators than pools with higher fees. Thus,
-each validator can choose between increasing their fees to earn more AOT, or decreasing their fees
+each validator can choose between increasing their fees to earn more COM, or decreasing their fees
 to attract more nominators and increase their chances of being elected. We will let the market
 regulate itself in this regard. In the long term, we expect that all validators will need to be cost
 efficient to remain competitive, and that validators with higher reputation will be able to charge
@@ -1203,7 +1203,7 @@ slightly higher commission fees (which is fair).</p>
 <p><img alt="staking" src="http://aochain-cdn.oss-cn-beijing.aliyuncs.com/staking-keys_stash_controller.png" /></p>
 <ul>
 <li>
-<p><strong>Stash:</strong> 这帐户储存资金用作绑定 AOTs 参与抵押，但将某些功能委托给 Controller。因此使用 Controller 可以积极参与，其保存 Stash 密钥在冷钱包中，这意味着它永远保持离线状态。您还可以指定代理帐户，对治理议案进行投票。</p>
+<p><strong>Stash:</strong> 这帐户储存资金用作绑定 COMs 参与抵押，但将某些功能委托给 Controller。因此使用 Controller 可以积极参与，其保存 Stash 密钥在冷钱包中，这意味着它永远保持离线状态。您还可以指定代理帐户，对治理议案进行投票。</p>
 </li>
 <li>
 <p><strong>Controller</strong> 这帐户是代表 Stash 帐户负责发出有关提名和验证的操作。它用于设置奖励发送到那个帐户和佣金。如果你是验证人，它亦用作设定 session 密钥，并只需要足够的资金来支付交易费用。</p>
@@ -1216,12 +1216,12 @@ should never use any account key for a "hot" session key in particular.</p>
 <p>Controller and Stash account keys can be either sr25519 or ed25519. For more on how keys are used in
 Polkadot and the cryptography behind it <a href="learn-keys">see here</a>.</p>
 <h2 id="_2">验证人和提名人<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>Since validator slots will be limited, most of those who wish to stake their AOT and contribute
+<p>Since validator slots will be limited, most of those who wish to stake their COM and contribute
 economic security to the network will be nominators. Validators do most of the heavy lifting: they
 produce new block candidates in BABE, vote and come to consensus in GRANDPA, validate the state
 transition function of parachains, and possibly some other responsibilities regarding data
 availability and <a href="learn-crosschain">XCMP</a>. Nominators, on the other hand, do not need to do anything
-once they have bonded their AOT. The experience of the nominator is similar to "set it and forget
+once they have bonded their COM. The experience of the nominator is similar to "set it and forget
 it," while the validator will be doing active service for the network by performing the critical
 operations. For this reason, the validator has certain privileges regarding the payout of the
 staking mechanism and will be able to declare its own allocation before the share is divided to
@@ -1233,7 +1233,7 @@ are many reasons to keep an eye on one's validators and keep optimizing the nomi
 returns and reduced risk. We talk more about this on the
 <a href="maintain-guides-how-to-nominate-polkadot">How to Nominate</a> page.</p>
 </blockquote>
-<h3 id="want-to-stake-aot">Want to stake AOT?<a class="headerlink" href="#want-to-stake-aot" title="Permanent link">&para;</a></h3>
+<h3 id="want-to-stake-com">Want to stake COM?<a class="headerlink" href="#want-to-stake-com" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="maintain-guides-how-to-nominate-polkadot">Nominator Guide</a> - Become a nominator on the DaGama
   network.</li>
@@ -1243,7 +1243,7 @@ returns and reduced risk. We talk more about this on the
 <h2 id="slashing">惩罚 (Slashing)<a class="headerlink" href="#slashing" title="Permanent link">&para;</a></h2>
 <p>Slashing will happen if a validator misbehaves (e.g. goes offline, attacks the network, or runs
 modified software) in the network. They and their nominators will get slashed by losing a percentage
-of their bonded/staked AOT. Any slashed AOT will be added to the Treasury. The rationale for this
+of their bonded/staked COM. Any slashed COM will be added to the Treasury. The rationale for this
 (rather than burning or distributing them as rewards) is that slashes may then be reverted by the
 Council by simply paying out from the Treasury. This would be useful in situations such as a faulty
 runtime causing slashing or forcing validators offline through no fault of their own. In the case of
@@ -1379,25 +1379,25 @@ for details.</p>
 percentage of the block reward, not an absolute value. After the value gets deducted, the remaining
 portion is based on their staked value and split between the validator and all of the nominators who
 have voted for this validator.</p>
-<p>For example, assume the block reward for a validator is 10 AOT. A validator may specify
-<code>validator_payment = 50%</code>, in which case the validator would receive 5 AOT. The remaining 5 AOT
+<p>For example, assume the block reward for a validator is 10 COM. A validator may specify
+<code>validator_payment = 50%</code>, in which case the validator would receive 5 COM. The remaining 5 COM
 would then be split between the validator and their nominators based on the proportion of stake each
 nominator had. Note that validators can put up their own stake, and for this calculation, their
 stake acts just as if they were another nominator.</p>
 <p>Rewards can be directed to the same account (controller), to the stash account (and either
 increasing the staked value or not increasing the staked value), or to a completely custom account.
-It is also possible to top-up / withdraw some bonded AOT without having to un-stake everything.</p>
+It is also possible to top-up / withdraw some bonded COM without having to un-stake everything.</p>
 <p>For specific details about validator payouts, please see
 <a href="maintain-guides-validator-payout">this guide</a>.</p>
 <h2 id="_6">通胀率<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>AOT is inflationary; there is no maximum number of AOT as in Bitcoin. Inflation is designed to be
+<p>COM is inflationary; there is no maximum number of COM as in Bitcoin. Inflation is designed to be
 10% in the first year, with validator rewards being a function of amount staked and the remainder
 going to treasury.</p>
 <p><img alt="staking" src="http://aochain-cdn.oss-cn-beijing.aliyuncs.com/staking-participation-rate.png" /></p>
 <p style="text-align:center">Source: <a href="https://research.web3.foundation/en/latest/polkadot/Token%20Economics.html">Research - Web3 Foundation</a></p>
 
 <ul>
-<li><strong>x-axis</strong>: Proportion of AOT staked</li>
+<li><strong>x-axis</strong>: Proportion of COM staked</li>
 <li><strong>y-axis</strong>: 通货膨胀, 年度化百分比</li>
 <li><strong>蓝线</strong>: 参与抵押者的通涨奖励</li>
 <li><strong>绿线</strong>: 抵押参与者的收益率</li>
