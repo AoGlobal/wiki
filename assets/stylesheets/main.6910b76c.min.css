@@ -1045,7 +1045,7 @@ pre .md-clipboard:hover {
 }
 
 .md-header-nav__button.md-logo {
-    margin: 0rem;
+    margin: .2rem;
     padding: .4rem
 }
 
