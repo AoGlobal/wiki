@@ -997,7 +997,7 @@ pre .md-clipboard:hover {
     right: 0;
     left: 0;
     z-index: 2;
-    height: 3.4rem;
+    height: 3rem;
     color: var(--md-primary-bg-color);
     background-color: var(--md-primary-fg-color);
     box-shadow: 0 0 .2rem rgba(0, 0, 0, 0), 0 .2rem .4rem rgba(0, 0, 0, 0);
@@ -1046,14 +1046,14 @@ pre .md-clipboard:hover {
 
 .md-header-nav__button.md-logo {
     margin: .2rem;
-    padding: .4rem
+    padding: .5rem
 }
 
 .md-header-nav__button.md-logo img,
 .md-header-nav__button.md-logo svg {
     display: block;
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 1.6rem;
+    height: 1.6rem;
     fill: currentColor
 }
 
@@ -1109,7 +1109,7 @@ pre .md-clipboard:hover {
     flex-grow: 1;
     padding: 0 1rem;
     font-size: .9rem;
-    line-height: 3.4rem
+    line-height: 3rem
 }
 
 .md-header-nav__title[data-md-state=active] .md-header-nav__topic {
@@ -1795,7 +1795,7 @@ html .md-nav__link[for=__toc]~.md-nav {
 
 @media screen and (min-width: 60em) {
     .md-search {
-        padding: .7rem 0
+        padding: .5rem 0
     }
 }
 
@@ -2669,7 +2669,7 @@ html .md-nav__link[for=__toc]~.md-nav {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     transition: opacity 250ms;
-    padding: .5rem;
+    padding: .3rem;
 }
 
 .md-source:hover {
